@@ -525,3 +525,224 @@ s = "hello world sentence"
 #         continue
 #     print(i , end=" ")
 
+
+# ------------------------------------------------------------------------
+
+
+# 1.WAP to extract & store the extensions of files in a list
+
+# l = ['forloop.txt', 'python.py', 'while.pdf', 'functions.pptx', 'lambda.png', 'map.py', 'python.pdf', 'oops.py']
+#
+#
+# def extract(l):
+#     py =[]
+#     txt =[]
+#     pdf =[]
+#     pptx =[]
+#     png = []
+#     for i in l:
+#         if i.endswith(".py"):
+#             py.append(i)
+#         elif i.endswith("txt"):
+#             txt.append(i)
+#         elif i.endswith(".pdf"):
+#             pdf.append(i)
+#         elif i.endswith(".pptx"):
+#             pptx.append(i)
+#         elif i.endswith(".png"):
+#             png.append(i)
+#     return py, txt, pptx, pdf, png
+#
+#
+# print(extract(l))
+
+
+# 2.wp to print first and last char of each name in the list
+# l = ["Sunil", "anil", "Suresh", "Mahesh", "Dinesh"]
+# new=[]
+#
+# def fir_lst(l):
+#     for i in l:
+#         new.append(i[0]+i[-1])
+#     return new
+# print(fir_lst(l))
+
+
+# 3.wp to create new list as squares of each number of below list
+# l = [2, 4, 5, 1, 9, 7, 3]
+#
+# def sq(l):
+#     new=[]
+#     for i in l:
+#         new.append(i**2)
+#     return new
+# print(sq(l))
+
+
+# # 4.wp if number is even the print its square else print its cube
+# l = [2, 4, 5, 1, 9, 7, 3]
+# def even_sq_cube(l):
+#     for i in l:
+#         if i%2==0:
+#             print("square ",i**2)
+#         else:
+#             print("cube ",i**3)
+# even_sq_cube(l)
+
+# 5.wp to create a new list of separate even number and odd number
+#
+# l = [2, 4, 5, 1, 9, 7, 3]
+#
+# def even_odd(l):
+#     even = []
+#     odd=[]
+#     for i in l :
+#         if i%2==0:
+#             even.append(i)
+#         else:
+#             odd.append(i)
+#
+#     return even,odd
+#
+# print(even_odd(l))
+
+
+# 6.wp to create a new list reversing each name from the list.
+
+# names = ["Sunil", "denga", "panga", "Harsha", "manga"]
+# def revList(names):
+#     new=[]
+#     for i in names:
+#         new.append(i[::-1])
+#     return new
+# print(revList(names))
+
+
+# 7. WAP  to find the number of digits present in a number
+# n = 123456
+# s=str(n)
+# def find_len(n):
+#     s = str(n)
+#     ct=0
+#     for i in s:
+#         ct+=1
+#     return ct
+# print(find_len(n))
+#
+
+
+# 8.WAP to print largest number in the list without using
+#inbuilt function
+#
+# numbers = [10, 30, 50, 80, 15, 20, 70,25]
+# def largest(num):
+#     largest=num[0]
+#     for i in num:
+#         if largest<i:
+#             largest=i
+#     return largest
+# print(largest(numbers))
+
+
+# 9.WAP to print all numeric values in a list
+# l = ['apple', 123, 'google', '45.6', 'yahoo', [1,2,3],True, (1,3,7), 6+3j]
+# for i in l:
+#     if type(i) in (int,complex,float):
+#         print(i)
+
+
+
+# 10.WAP to perform copy method in a list without using copy()(take user input)
+
+# l=[2,3,5,5,8,4]
+# def copy(l):
+#     new=[]
+#     for i in l:
+#         new.append(i)
+#     return new
+#
+# print(copy(l))
+
+# 11.WAP to check the given number is Armstrong or not
+#Armstrong : Sum of cube of the digits
+
+# num=153
+# def isArmstrong(num):
+#     sum=0
+#     temp=num
+#
+#     while(temp!=0):
+#         sum+=((temp%10)**3)
+#         temp=temp//10
+#     if sum==num:
+#         return f"{num} is armstrong number"
+#     else:
+#         return f"{num} is not armstrong number"
+#
+# print(isArmstrong(num))
+
+# 12.WAP to check given number is perfect number or not(take user input)
+
+#sum of its proper divisor should be equal to original value
+
+# def isPerfect(num):
+#     sum=0
+#     for i in range(1,(num//2)+1,1):
+#         if num%i==0:
+#             sum+=i
+#     if num==sum:
+#         return f"{num} is perfect number"
+#     else:
+#         return f"{num} is not perfect number"
+#
+# print(isPerfect(36))
+
+# 13.WAP to print Fibonacci numbers up to 10
+
+# def fibo(num):
+#     n1=0
+#     n2=1
+#     res=0
+#     for i in range(0,num,1):
+#         print(n1, end=" ")
+#         res=n1+n2
+#         n1=n2
+#         n2=res
+#
+# fibo(10)
+
+# 14.WAP to check given number is Automorphic or not
+# automorphic means:-->square end with the integer
+# 1,5,6,25,76,376,625,9376
+
+def is_automorphic(number):
+    square = number * number
+
+
+    if str(square).endswith(str(number)):
+        return True
+    else:
+        return False
+
+numbers = [1, 5, 6, 25, 76, 376, 625, 9376]
+
+for i in numbers:
+    if is_automorphic(i):
+        print(f"{i} is an automorphic number")
+    else:
+        print(f"{i} is not an automorphic number")
+
+
+# 15. WAP to reverse each element in a list, then reverse entire list
+#
+# l = ['apple', 'google', 'yahoo', 'Walmart']
+#
+# new=[]
+# for i in range(len(l)-1,-1,-1):
+#     new.append(l.pop()[::-1])
+#
+#
+# print(new)
+
+
+
